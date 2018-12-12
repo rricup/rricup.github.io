@@ -57,23 +57,23 @@ $(function() {
 </script>
 </head>
 
+<script>
+  $(function(){
+    var includes = $('[data-include]');
+    jQuery.each(includes, function(){
+      var file = 'views/' + $(this).data('include') + '.html';
+      $(this).load(file);
+    });
+  });
+</script>
 
 <body>
 
 <div id="home">
   <a id="about" class="smooth"></a>
-  <div id="zeppelin">
-	<img src="zeppelin3.png">
-  </div>
-  <div id="nav">
-     <ul>
-          <li><a href="#">HOME</a></li>
-         <li><a href="/about">ABOUT</a></li>
-         <li><a href="/outreach">OUTREACH</a></li>
-		 <li><a href="/gallery">GALLERY</a></li>
-         <li><a href="/sponsors">SPONSORS</a></li>
-     </ul>
-</div>
+	
+  <div data-include="header"></div>
+	
 <div id="center">
 	<img src="https://cloud.githubusercontent.com/assets/6074292/13198238/cbe82efa-d7b8-11e5-9b45-e105d51e1f84.png">
 </div>
