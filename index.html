@@ -58,7 +58,16 @@ $(function() {
 </script>
 </head>
 
-
+<script>
+  $(function(){
+    var includes = $('[data-include]');
+    jQuery.each(includes, function(){
+      var file = 'views/' + $(this).data('include') + '.html';
+      $(this).load(file);
+    });
+  });
+</script>
+	
 <body>
 
 <div id="home">
@@ -104,8 +113,8 @@ $(function() {
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/jZbdyyfsECs" frameborder="0" allowfullscreen></iframe>
 	<br><br><br><br><br><br></br>
 	</div>
-	
-<script src="footer.html"></script>
+
+<div data-include="footer"></div>
 
 </body>
 </html>
